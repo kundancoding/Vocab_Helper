@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; padding: 10px; }
+  </style>
+</head>
+<body onload="loadFirstQuestion()">
+  <h4>Vocab Helper</h4>
+  <button id="startTestBtn">Start Test</button>
+  <p id="status"></p>
+  <div style="margin:10px;">
+  <h2>
+    <div id = "question"></div>
+  </h2>
+  <form>
+    <input type="radio" id="option1" name="word_meaning" value="1"> <label for="1" id="lb1"></label><br>
+    <input type="radio" id="option2" name="word_meaning" value="2"> <label for="2" id="lb2"></label><br>
+    <input type="radio" id="option3" name="word_meaning" value="3"> <label for="3" id="lb3"></label><br>
+    <input type="radio" id="option4" name="word_meaning" value="4"> <label for="4" id="lb4"></label><br>
+  </form>
+  <button id="Checkanswer">
+    Check Answer
+  </button>
+  <button id="Nextquestion">
+    Next Question!!
+  </button>
+  <!--<div id="riCorrect" class="riHide ri-alert-success">
+    Correct
+  </div>
+  <div id="riIncorrect" class="riHide ri-alert-danger">
+    In-correct
+  </div>-->
+
+
+  <script src="popup.js"></script>
+</body>
+</html>

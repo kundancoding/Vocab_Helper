@@ -3,9 +3,14 @@
 <head>
   <style>
     body { font-family: sans-serif; padding: 10px; }
+	html
+	{
+    width: 300px;  /* max: 800px */
+    height: 160px; /* max: 600px */
+	}
   </style>
 </head>
-<body onload="loadFirstQuestion()">
+<body>
   <h4>Vocab Helper</h4>
   <button id="startTestBtn">Start Test</button>
   <p id="status"></p>
@@ -25,14 +30,10 @@
   <button id="Nextquestion">
     Next Question!!
   </button>
-  <!--<div id="riCorrect" class="riHide ri-alert-success">
-    Correct
-  </div>
-  <div id="riIncorrect" class="riHide ri-alert-danger">
-    In-correct
-  </div>-->
+  
 
-
+ <script src="question_list.json"></script>
   <script src="popup.js"></script>
+
 </body>
 </html>

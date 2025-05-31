@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Vocab Helper",
+  "version": "1.0",
+  "description": "Improve your english vocabulary,one word at a a time.",
+  "permissions": ["scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["question_list.js","popup.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

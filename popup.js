@@ -1,3 +1,7 @@
+var currentQuestion = 0;
+var questions = data;
+loadQuestion(currentQuestion);
+
 document.getElementById("startTestBtn").addEventListener("click", () => {
   alert("starting test");  
 });
@@ -10,37 +14,6 @@ document.getElementById("Nextquestion").addEventListener("click", (event) => {
   nextQuestion(event);
 });
 
-function fetchJSONData() {
-            /*fetch('./question_list.json'
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.json();  
-                })
-                .then(data => console.log(data))  
-                .catch(error => 3vconsole.error('Failed to fetch data:', error)); 
-        }*/
-		
-	var data = [
-		{
-			"Question":"Abase",
-			"Options":["Humiliate","Anger","Defy","Spend"],
-			"Answer":"Humiliate"
-		},
-		{
-			"Question":"Abjure",
-			"Options":["Sanctify","Pitiful","Renounce","Abolish"],
-			"Answer":"Renounce"
-		},
-		
-	];
-
-return data;
-
-}
-var currentQuestion = 0;
-var questions = {};
 function checkAnswer(event){
 	//console.log(currentQuestion["Answer"]);
 	var answerSelected = "";

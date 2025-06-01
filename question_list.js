@@ -1,16 +1,162 @@
-data=[{"Question":"Abase","Options":["Humiliate","Anger","Defy","Spend"],"Answer":"Humiliate"},
-{"Question":"Abjure","Options":["Sanctify","Pitiful","Renounce","Abolish"],"Answer":"Renounce"},
-{"Question":"Atrophy","Options":["Victimize","Decay","Resist","To reward"],"Answer":"Decay"},
-{"Question":"Bourgeoies","Options":["French Victory Ritual","King","Peasant","Capitalist"],"Answer":"Capitalist"},
-{"Question":"Cacophany","Options":["Opera","Disharmonious Sound","Pleasant sound pleasing the ego","Account Book"],"Answer":"Disharmonious Sound"},
-{"Question":"Clandestine","Options":["Luxurious","Secret","Merciful","Priest"],"Answer":"Secret"},
-{"Question":"Coagulate","Options":["Clot","Sing Together","Rebel","Thin"],"Answer":"Clot"},
-{"Question":"Consecrate","Options":["Destroy","Dedicate","Antagonize","Meditate"],"Answer":"Dedicate"},
-{"Question":"Deleterious","Options":["Chaotic","Harmful","Diplomatic","Spendthrift"],"Answer":"Harmful"},
-{"Question":"Garrulous","Options":["Wordy","Wild","Stubborn","Dangerous"],"Answer":"Wordy"},
-{"Question":"Hegemony","Options":["Plagiarisim","Obdurate","Organizing","Domination"],"Answer":"Domination"},
-{"Question":"Ignominious","Options":["Ill omened","Poor","Humiliating","Ignorant"],"Answer":"Humiliating"},
-{"Question":"Maudlin","Options":["Weakly Sentimental","Overly Aggressive","Extremely Interesting","Fiercely Independent"],"Answer":"Fiercely Independent"},
-{"Question":"Obstreperous","Options":["Noisy","Stubborn","Resilient","Jealous"],"Answer":"Noisy"},
-{"Question":"Perfunctory","Options":["Smell","Persisting","No Enthusiasm","Mundane"],"Answer":"No Enthusiasm"},
-{"Question":"Sagacity","Options":["Shrewdness","Stinginess","Ignorance","Fiercely Independent"],"Answer":"Shrewdness"}];
+const data = [
+  {
+    question: "Abase",
+    options: {
+      a: "Humiliate",
+      b: "Anger",
+      c: "Defy",
+      d: "Spend"
+    },
+    correct: "a"
+  },
+  {
+    question: "Abjure",
+    options: {
+      a: "Sanctify",
+      b: "Pitiful",
+      c: "Renounce",
+      d: "Abolish"
+    },
+    correct: "c"
+  },
+  {
+    question: "Atrophy",
+    options: {
+      a: "Victimize",
+      b: "Decay",
+      c: "Resist",
+      d: "To reward"
+    },
+    correct: "b"
+  },
+  {
+    question: "Bourgeoies",
+    options: {
+      a: "French Victory Ritual",
+      b: "King",
+      c: "Peasant",
+      d: "Capitalist"
+    },
+    correct: "d"
+  },
+  {
+    question: "Cacophany",
+    options: {
+      a: "Opera",
+      b: "Disharmonious Sound",
+      c: "Pleasant sound pleasing the ego",
+      d: "Account Book"
+    },
+    correct: "b"
+  },
+  {
+    question: "Clandestine",
+    options: {
+      a: "Luxurious",
+      b: "Secret",
+      c: "Merciful",
+      d: "Priest"
+    },
+    correct: "b"
+  },
+  {
+    question: "Coagulate",
+    options: {
+      a: "Clot",
+      b: "Sing Together",
+      c: "Rebel",
+      d: "Thin"
+    },
+    correct: "a"
+  },
+  {
+    question: "Consecrate",
+    options: {
+      a: "Destroy",
+      b: "Dedicate",
+      c: "Antagonize",
+      d: "Meditate"
+    },
+    correct: "b"
+  },
+  {
+    question: "Deleterious",
+    options: {
+      a: "Chaotic",
+      b: "Harmful",
+      c: "Diplomatic",
+      d: "Spendthrift"
+    },
+    correct: "b"
+  },
+  {
+    question: "Garrulous",
+    options: {
+      a: "Wordy",
+      b: "Wild",
+      c: "Stubborn",
+      d: "Dangerous"
+    },
+    correct: "a"
+  },
+  {
+    question: "Hegemony",
+    options: {
+      a: "Plagiarisim",
+      b: "Obdurate",
+      c: "Organizing",
+      d: "Domination"
+    },
+    correct: "d"
+  },
+  {
+    question: "Ignominious",
+    options: {
+      a: "Ill omened",
+      b: "Poor",
+      c: "Humiliating",
+      d: "Ignorant"
+    },
+    correct: "c"
+  },
+  {
+    question: "Maudlin",
+    options: {
+      a: "Weakly Sentimental",
+      b: "Overly Aggressive",
+      c: "Extremely Interesting",
+      d: "Fiercely Independent"
+    },
+    correct: "a"
+  },
+  {
+    question: "Obstreperous",
+    options: {
+      a: "Noisy",
+      b: "Stubborn",
+      c: "Resilient",
+      d: "Jealous"
+    },
+    correct: "a"
+  },
+  {
+    question: "Perfunctory",
+    options: {
+      a: "Smell",
+      b: "Persisting",
+      c: "No Enthusiasm",
+      d: "Mundane"
+    },
+    correct: "c"
+  },
+  {
+    question: "Sagacity",
+    options: {
+      a: "Shrewdness",
+      b: "Stinginess",
+      c: "Ignorance",
+      d: "Fiercely Independent"
+    },
+    correct: "a"
+  }
+];

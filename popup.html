@@ -1,39 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    body { font-family: sans-serif; padding: 10px; }
-	html
-	{
-    width: 300px;  /* max: 800px */
-    height: 160px; /* max: 600px */
-	}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Popup</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h4>Vocab Helper</h4>
-  <button id="startTestBtn">Start Test</button>
-  <p id="status"></p>
-  <div style="margin:10px;">
-  <h2>
-    <div id = "question"></div>
-  </h2>
-  <form>
-    <input type="radio" id="option1" name="word_meaning" value="1"> <label for="1" id="lb1"></label><br>
-    <input type="radio" id="option2" name="word_meaning" value="2"> <label for="2" id="lb2"></label><br>
-    <input type="radio" id="option3" name="word_meaning" value="3"> <label for="3" id="lb3"></label><br>
-    <input type="radio" id="option4" name="word_meaning" value="4"> <label for="4" id="lb4"></label><br>
-  </form>
-  <button id="Checkanswer">
-    Check Answer
-  </button>
-  <button id="Nextquestion">
-    Next Question!!
-  </button>
-  
+  <div class="popup-container">
+    <div class="score-box" id="scoreBox">✔️ 0 | ❌ 0</div>
+    
+    <div class="question-section">
+      <h2 id="question"></h2>
+      <form id="answersForm">
+        <label id="lb1"><input type="radio" id="option1" name="answer" value="a"> A</label>
+        <label id="lb2"><input type="radio" id="option2" name="answer" value="b"> B</label>
+        <label id="lb3"><input type="radio" id="option3" name="answer" value="c"> C</label>
+        <label id="lb4"><input type="radio" id="option4" name="answer" value="d"> D</label>
+      </form>
+    </div>
 
- <script src="question_list.json"></script>
-  <script src="popup.js"></script>
-
+    <div class="button-group">
+      <button id="checkBtn">Check Answer</button>
+      <button id="nextBtn" disabled>Next Question</button>
+    </div>
+  </div>
+<script src="question_list.js"></script>
+<script src="popup.js"></script>
 </body>
 </html>

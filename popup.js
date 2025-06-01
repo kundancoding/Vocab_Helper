@@ -1,68 +1,74 @@
+let correctCount = 0;
+let incorrectCount = 0;
 var currentQuestion = 0;
 var questions = data;
 loadQuestion(currentQuestion);
 
-document.getElementById("startTestBtn").addEventListener("click", () => {
-  alert("starting test");  
-});
 
-document.getElementById("Checkanswer").addEventListener("click", (event) => {
-  checkAnswer(event);
-});
+document.getElementById('checkBtn').addEventListener('click', () => {
+		var cur_ques = questions[currentQuestion];
+		  const selected = document.querySelector('input[name="answer"]:checked');
+		  if (!selected) return;
 
-document.getElementById("Nextquestion").addEventListener("click", (event) => {
-  nextQuestion(event);
-});
+		  const selectedValue = selected.value; // ✅ define selectedValue
 
-function checkAnswer(event){
-	//console.log(currentQuestion["Answer"]);
-	var answerSelected = "";
-	var cur_ques = questions[currentQuestion];
-	if(document.getElementById("option1").checked) {
-		answerSelected = cur_ques["Options"][0];
-	}
-	else if(document.getElementById("option2").checked) {
-		answerSelected = cur_ques["Options"][1];
-	}
-	else if(document.getElementById("option3").checked) {
-		answerSelected = cur_ques["Options"][2];
-	}
-	else if(document.getElementById("option4").checked) {
-		answerSelected = cur_ques["Options"][3];
-	}
-	else {
-		debugger;
-	}
-	if(answerSelected === cur_ques["Answer"]){ 
-	alert("Good job");
-	}
-	else {alert("Try again");}
+		  const labels = document.querySelectorAll('label');
+		  labels.forEach(label => label.style.color = ''); // Reset colors
+		  const correctOption = cur_ques["correct"];
+		  if (selectedValue === correctOption) {
+			correctCount++;
+			selected.parentElement.style.color = 'green';
+		  } else {
+			incorrectCount++;
+			selected.parentElement.style.color = 'red';
+			const correctSelector = "input[value="+correctOption+"]";
+			const correctInput = document.querySelector(correctSelector);
+			correctInput.parentElement.style.color = 'green';
+		  }
+
+		  updateScore();
+		  document.getElementById('checkBtn').disabled = true;
+		  document.getElementById('nextBtn').disabled = false;
+		});
+
+
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      // Reset logic for demo
+      document.querySelectorAll('input[name="answer"]').forEach(input => {
+        input.checked = false;
+        input.parentElement.style.color = '';
+      });
+	  
+      document.getElementById('checkBtn').disabled = false;
+      document.getElementById('nextBtn').disabled = true;
+	  nextQuestion();
+      //document.getElementById('question').innerText = 'Next question here...';
+	  
+	});
 	
-}
-function loadFirstQuestion(){
-	var questions_list = fetchJSONData();
-	//console.log("Total questions = " , questions.length);
-	currentQuestion = 0;
-	questions = questions_list ;
-	loadQuestion(currentQuestion);
-	
-	
-	//alert(questions);
-}
-function loadQuestion(index){
-	console.log("Loading index" , index);
-	var question1 = questions[currentQuestion];
-	//console.log(question1["Question"]);
-	document.getElementById("question").innerHTML=question1["Question"];
-	//console.log(question1["Options"][0]);
-	document.getElementById("lb1").innerHTML=question1["Options"][0];
-	document.getElementById("lb2").innerHTML=question1["Options"][1];
-	document.getElementById("lb3").innerHTML=question1["Options"][2];
-	document.getElementById("lb4").innerHTML=question1["Options"][3];
+	function updateScore() {
+  document.getElementById('scoreBox').innerText = `✔️ ${correctCount} | ❌ ${incorrectCount}`;
 }
 
-function nextQuestion(event){
+function loadQuestion(index) {
+  const questionObj = questions[index];
+  document.getElementById('question').innerText = questionObj.question;
+
+  const form = document.getElementById('answersForm');
+  form.innerHTML = ""; // Clear previous answers
+
+  for (const key in questionObj.options) {
+    const label = document.createElement("label");
+    label.innerHTML = `<input type="radio" name="answer" value="${key}"> ${questionObj.options[key]}`;
+    form.appendChild(label);
+  }
+
+  document.getElementById('checkBtn').disabled = false;
+  document.getElementById('nextBtn').disabled = true;
+}
+
+function nextQuestion(){
 	currentQuestion = currentQuestion + 1 ;
 	loadQuestion(currentQuestion);
 }
-
